@@ -70,6 +70,7 @@ def country_salary():
     return fig, result
 
 
+@st.cache
 def ten_country():
     # df = data.pivot_table(index=['Resident Country'], values='Average_Salary', aggfunc='mean')
     # df.reset_index(inplace=True)
@@ -89,6 +90,7 @@ def ten_country():
     return fig
 
 
+@st.cache
 def gender():
     # df = data.pivot_table(index=['Gender'], values='Average_Salary', aggfunc='mean')
     # df.reset_index(inplace=True)
@@ -111,6 +113,7 @@ def gender():
     return fig
 
 
+@st.cache
 def age_group():
     # df = data.pivot_table(index=['Age_group'], values='Average_Salary', aggfunc='mean')
     # df.reset_index(inplace=True)
@@ -129,6 +132,7 @@ def age_group():
     return fig
 
 
+@st.cache
 def edu():
     # df = data.pivot_table(index=['Education'], values='Average_Salary', aggfunc='mean')
     # df.reset_index(inplace=True)
@@ -151,6 +155,7 @@ def edu():
 
 
 #  Ethnicity
+@st.cache
 def ethnicity():
     # df = data.groupby('Ethnicity').filter(lambda x: x['Ethnicity'].count() >= 2)
     #
@@ -177,9 +182,11 @@ def ethnicity():
 
 
 # role
+@st.cache
 def role():
     # df = data.groupby('Which Title Best Fits your Current Role?'). \
-    #     filter(lambda x: x['Which Title Best Fits your Current Role?'].count() >= 2)
+    #     filter(lam
+    #     bda x: x['Which Title Best Fits your Current Role?'].count() >= 2)
     # df = df.pivot_table(index=['Which Title Best Fits your Current Role?'], values='Average_Salary', aggfunc='mean')
     #
     # df.reset_index(inplace=True)
@@ -204,6 +211,7 @@ def role():
 
 
 # industry
+@st.cache
 def industry():
     # df = data.groupby('What Industry do you work in?'). \
     #     filter(lambda x: x['What Industry do you work in?'].count() >= 10)
@@ -231,6 +239,7 @@ def industry():
 
 
 # programming
+@st.cache
 def programming():
     # df = data.groupby('Favorite Programming Language'). \
     #     filter(lambda x: x['Favorite Programming Language'].count() >= 2)
@@ -259,6 +268,8 @@ def programming():
 
 # HAPPY INDEX
 
+
+@st.cache
 def salary():
     df = data.groupby('Happiness_Index(Salary)'). \
         filter(lambda x: x['Happiness_Index(Salary)'].count() > 2)
@@ -277,6 +288,8 @@ def salary():
     return fig
 
 
+
+@st.cache
 def work():
     df = data.groupby('Happiness_Index(Work/Life Balance)'). \
         filter(lambda x: x['Happiness_Index(Work/Life Balance)'].count() > 2)
@@ -295,6 +308,7 @@ def work():
     return fig
 
 
+@st.cache
 def coworker():
     df = data.groupby('Happiness_Index(Coworkers)'). \
         filter(lambda x: x['Happiness_Index(Coworkers)'].count() > 2)
@@ -313,6 +327,7 @@ def coworker():
     return fig
 
 
+@st.cache
 def management():
     df = data.groupby('Happiness_Index(Management)'). \
         filter(lambda x: x['Happiness_Index(Management)'].count() > 2)
@@ -331,6 +346,7 @@ def management():
     return fig
 
 
+@st.cache
 def upward():
     df = data.groupby('Happiness_Index(Upward Mobility)'). \
         filter(lambda x: x['Happiness_Index(Upward Mobility)'].count() > 2)
@@ -349,6 +365,7 @@ def upward():
     return fig
 
 
+@st.cache
 def new_things():
     df = data.groupby('Happiness_Index(Learning New Things)'). \
         filter(lambda x: x['Happiness_Index(Learning New Things)'].count() > 2)

@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 import time
-from numerize.numerize import numerize
 from classes.helper import country_salary, ten_country
 from PIL import Image
 
@@ -16,7 +15,7 @@ from PIL import Image
 # to have a wide space
 st.set_page_config(page_title='Dashboard', layout='wide', initial_sidebar_state='expanded', )
 total_impressions = float(100000000000000)
-country_salaryf, country_salaryr = country_salary()
+country_salaryf, country_salary = country_salary()
 
 # link css
 css_path = os.path.join('static', 'style.css')
@@ -30,23 +29,23 @@ total1, total2, total3, total4, total5 = st.columns(5, gap='large')
 
 with total1:
     st.image('images/united-arab-emirates.png', width=100, use_column_width='Auto')
-    st.metric(label=country_salaryr[0][0], value=f'${numerize(country_salaryr[0][1])}')
+    st.metric(label=country_salary[0][0], value=f'${(country_salary[0][1])}')
 
 with total2:
     st.image('images/denmark.png', width=100, use_column_width='Auto')
-    st.metric(label=country_salaryr[1][0], value=f'${numerize(country_salaryr[1][1])}')
+    st.metric(label=country_salary[1][0], value=f'${(country_salary[1][1])}')
 
 with total3:
     st.image('images/ireland.png', width=100, use_column_width='Auto')
-    st.metric(label=country_salaryr[2][0], value=f'${numerize(country_salaryr[2][1])}')
+    st.metric(label=country_salary[2][0], value=f'${(country_salary[2][1])}')
 
 with total4:
     st.image('images/united-states.png', width=100, use_column_width='Auto')
-    st.metric(label=country_salaryr[3][0], value=f'${numerize(country_salaryr[3][1])}')
+    st.metric(label=country_salary[3][0], value=f'${(country_salary[3][1])}')
 
 with total5:
     st.image('images/australia.png', width=100, use_column_width='Auto')
-    st.metric(label=country_salaryr[4][0], value=f'${numerize(country_salaryr[4][1])}')
+    st.metric(label=country_salary[4][0], value=f'${(country_salary[4][1])}')
 
 st.empty()
 st.empty()
